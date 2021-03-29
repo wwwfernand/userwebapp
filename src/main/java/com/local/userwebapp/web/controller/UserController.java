@@ -89,6 +89,11 @@ public class UserController {
      */
     @PostMapping("/")
     public String authenticate(@ModelAttribute("loginForm") User userForm, BindingResult bindingResult, Model model, HttpServletRequest req) {
+        userValidator.validate(userForm, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "login";
+        }
         try{
             Authentication auth=loginService.authenticate(userForm.getUsername(), userForm.getPassword());
             SecurityContext sc = SecurityContextHolder.getContext();

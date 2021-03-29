@@ -23,6 +23,7 @@
                     </div>
                     <div class="form-input">
                         <input name="username" type="text" class="form-control" />
+                        <form:errors path="username"></form:errors>
                     </div>
                 </div>
                 <div class="form-group">
@@ -31,6 +32,7 @@
                     </div>
                     <div class="form-input">
                         <input name="password" type="password" class="form-control"/>
+                        <form:errors path="password"></form:errors>
                     </div>
                 </div>
                 <div class="form-group">
